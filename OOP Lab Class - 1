@@ -1,0 +1,33 @@
+// Write a Java program that defines a class called Box with three private double variables: height, width, and length.
+public class MyProject {
+
+    public static void main(String[] args) {
+        // Create object of Box with height=12.4, width=13.7, length=7
+        Box b1 = new Box(12.4, 13.7, 7);
+
+        // Print volume
+        System.out.println("Volume = " + b1.calcVolume());
+    }
+}
+
+// Box class
+class Box {
+    // Private variables
+    private double height;
+    private double width;
+    private double length;
+
+    // Constructor
+    Box(double height, double width, double length) {
+        this.height = height;
+        this.width = width;
+        this.length = length;
+    }
+
+    // Method to calculate volume
+    public double calcVolume() {
+        return height * width * length;
+    }
+}
+
+// Output: Volume = 1189.1599999999999
