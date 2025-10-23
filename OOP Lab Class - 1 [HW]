@@ -1,0 +1,90 @@
+// Write a Java program to create a Student class with private fields s_id, s_name, s_dept, and s_cg, and use getter and setter methods to input and display student details.
+import java.util.Scanner;
+
+class Student {
+    // Private fields
+    private int s_id;
+    private String s_name;
+    private String s_dept;
+    private double s_cg;
+
+    // Setter methods
+    public void setS_id(int s_id) {
+        this.s_id = s_id;
+    }
+
+    public void setS_name(String s_name) {
+        this.s_name = s_name;
+    }
+
+    public void setS_dept(String s_dept) {
+        this.s_dept = s_dept;
+    }
+
+    public void setS_cg(double s_cg) {
+        this.s_cg = s_cg;
+    }
+
+    // Getter methods
+    public int getS_id() {
+        return s_id;
+    }
+
+    public String getS_name() {
+        return s_name;
+    }
+
+    public String getS_dept() {
+        return s_dept;
+    }
+
+    public double getS_cg() {
+        return s_cg;
+    }
+
+    // Method to display student details
+    public void display() {
+        System.out.println("Student ID: " + s_id);
+        System.out.println("Student Name: " + s_name);
+        System.out.println("Department: " + s_dept);
+        System.out.println("CGPA: " + s_cg);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Student student = new Student();
+
+        // Input student details
+        System.out.print("Enter Student ID: ");
+        student.setS_id(sc.nextInt());
+        sc.nextLine(); // Consume newline
+
+        System.out.print("Enter Student Name: ");
+        student.setS_name(sc.nextLine());
+
+        System.out.print("Enter Department: ");
+        student.setS_dept(sc.nextLine());
+
+        System.out.print("Enter CGPA: ");
+        student.setS_cg(sc.nextDouble());
+
+        // Display student details
+        System.out.println("\nStudent Details:");
+        student.display();
+
+        sc.close();
+    }
+}
+
+// Input: Enter Student ID: 012
+//        Enter Student Name: Sazzad
+//        Enter Department: CSE
+//        Enter CGPA: 4.00
+
+// Output: Student Details:
+//         Student ID: 12
+//         Student Name: Sazzad
+//         Department: CSE
+//         CGPA: 4.0
