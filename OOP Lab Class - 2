@@ -1,0 +1,101 @@
+// 1) Make a Book class with the following attributes :
+//    Name;
+//    Author name;
+//    Published year;
+//    Price;
+
+//2) Add a method where the price of the book can’t be set under 200 taka;
+
+//3) Make 2 objects & populate them.
+
+// 1) Code:
+public class Book {
+    String Name;
+    String AuthorName;
+    int Published_Year;
+    double Price;
+
+    public Book(String name, String authorName, int publishedYear, double price) {
+        this.Name = name;
+        this.AuthorName = authorName;
+        this.Published_Year = publishedYear;
+        this.Price = price;
+    }
+
+    public void displayDetails() {
+        System.out.println("Book Name: " + Name);
+        System.out.println("Author Name: " + AuthorName);
+        System.out.println("Published Year: " + Published_Year);
+        System.out.println("Price: " + Price);
+    }
+
+    public static void main(String[] args) {
+        Book myBook = new Book("Java Programming", "John Doe", 2021, 39.99);
+        myBook.displayDetails();
+    }
+}
+// Output:
+// Book Name: Java Programming
+// Author Name: John Doe
+// Published Year: 2021
+// Price: 39.99
+
+// 2) Code:
+public class Book {
+    private double price;
+
+    public Book(double price) {
+        setPrice(price);
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public final void setPrice(double price) {
+        if (price >= 200) {
+            this.price = price;
+        } else {
+            System.out.println("Price can't be less than 200 taka. Setting default price 200.");
+            this.price = 200;
+        }
+    }
+
+    public static void main(String[] args) {
+        Book book1 = new Book(150);
+        System.out.println("Book price: " + book1.getPrice());
+
+        Book book2 = new Book(250);
+        System.out.println("Book price: " + book2.getPrice());
+    }
+}
+// Output:
+// Book price: 200.0
+// Book price: 250.0
+
+
+// 3) Code:
+public class Book {
+    String name;
+    double price;
+
+    public Book(String name, double price) {
+        this.name = name;
+        if (price < 200) this.price = 200;
+        else this.price = price;
+    }
+
+    void display() {
+        System.out.println("Book: " + name + ", Price: " + price);
+    }
+
+    public static void main(String[] args) {
+        Book b1 = new Book("Java Basics", 180);
+        Book b2 = new Book("OOP Concepts", 350);
+        b1.display();
+        b2.display();
+    }
+}
+// Output:
+// Book: Java Basics, Price: 200.0
+// Book: OOP Concepts, Price: 350.0
