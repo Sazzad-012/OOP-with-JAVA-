@@ -1,0 +1,93 @@
+/* Write a Java program using Object-Oriented Programming (OOP) concepts to demonstrate inheritance.
+Create two classes:
+  1. Human class with:
+      --> Data members: name, age
+      --> Methods:
+            --> setters and getters
+            --> work() method that prints "Human is working"
+
+  2. Student class that inherits from Human and has:
+      --> Additional data members: id, universityName, studentCount
+      --> setters, getters, and a constructor to initialize data
+ In the main method, create an object of Student and display all information. */
+
+class Human {
+    private String name;
+    private int age;
+
+    // Setters
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    // Getters
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    // Method
+    public void work() {
+        System.out.println("Human is working");
+    }
+}
+
+// Derived class
+class Student extends Human {
+    private int id;
+    private String universityName;
+    private static int studentCount = 0;
+
+    // Constructor
+    public Student(String name, int age, int id, String universityName) {
+        setName(name);
+        setAge(age);
+        this.id = id;
+        this.universityName = universityName;
+        studentCount++;
+    }
+
+    // Setters
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setUniversityName(String universityName) {
+        this.universityName = universityName;
+    }
+
+    // Getters
+    public int getId() {
+        return id;
+    }
+
+    public String getUniversityName() {
+        return universityName;
+    }
+
+    public static int getStudentCount() {
+        return studentCount;
+    }
+}
+
+// Main class
+public class StudentDemo {
+    public static void main(String[] args) {
+        Student s1 = new Student("Sazzad", 21, 101, "Dhaka University");
+
+        System.out.println("Name: " + s1.getName());
+        System.out.println("Age: " + s1.getAge());
+        System.out.println("ID: " + s1.getId());
+        System.out.println("University: " + s1.getUniversityName());
+        System.out.println("Total Students: " + Student.getStudentCount());
+
+        s1.work();
+    }
+}
