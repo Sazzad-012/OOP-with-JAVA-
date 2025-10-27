@@ -1,0 +1,49 @@
+/*
+  1) Create the following class hierarch * vehicle ---> Car ---> Electric Car.
+  2) Each Class should have "move()" method that print a specific message like-
+     # vehicle is moving!
+     # car is running on fuel.
+     # ElectricCar is running silently!
+  3) In main method:
+     --> Declare a reference type Vehicle &
+         Assign it to object of each subclass (vehicle, Car, Electric Car)
+     --> call the move() using the "Vehicle" reference each time & observe which version of method executes.
+ */
+public class Vehicle {
+
+    void start() {
+        System.out.println("Vehicle is moving");
+    }
+}
+
+class Car extends Vehicle {
+    void start() {
+        System.out.println("Car is running on fuel");
+    }
+}
+
+class ElectricCar extends Car {
+    void start() {
+        System.out.println("ElectricCar is running silently!");
+    }
+}
+
+class main {
+
+    public static void main(String[] args) {
+        Vehicle v1 = new Vehicle ();
+        v1.start();
+
+        Vehicle  v2 = new Car ();
+        v2.start();
+
+        Vehicle v3 = new ElectricCar();
+        v3.start();
+    }
+}
+
+/* Output:
+Vehicle is moving
+Car is running on fuel
+ElectricCar is running silently!
+ */
