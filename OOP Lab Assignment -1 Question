@@ -1,0 +1,50 @@
+Assignment Title: Bank Account Management System
+Objective:
+In this assignment, you will implement a Bank Account Management System in Java using class,
+object, static methods, public/private access modifiers, and setter/getter methods. You will create
+a program that allows users to perform basic banking operations such as depositing and withdrawing money, while ensuring proper balance management and tracking total bank funds.
+
+Requirements:
+1. Create a class BankAccount with the following private attributes:
+    ○ accountNumber (integer) – Unique account number.
+    ○ accountHolder (String) – Name of the account holder.
+    ○ balance (double) – The account balance.
+2. Define the following static variables in the BankAccount class:
+    ○ totalAccounts (integer) – Tracks the total number of accounts created.
+    ○ totalBankBalance (double) – Tracks the total balance across all accounts.
+3. Implement the following methods in BankAccount:
+    ○ Constructor:
+       ■ Takes accountNumber, accountHolder, and initialBalance as parameters.
+       ■ Ensures that the initialBalance is at least 500 (if not, sets it to 500).
+       ■ Increments totalAccounts and updates totalBankBalance.
+    ○ Setter & Getter Methods:
+       ■ setAccountHolder(String name) and getAccountHolder()
+       ■ setAccountNumber(int number) and getAccountNumber()
+       ■ getBalance() (no setter for balance, as deposits/withdrawals will update it)
+    ○ Transaction Methods:
+       ■ deposit(double amount): Adds money to the account. Amount must be positive.
+       ■ withdraw(double amount): Deducts money from the account only if the balance remains above 500.
+
+    ○ Static Methods:
+       ■ getTotalAccounts(): Returns the total number of accounts.
+       ■ getTotalBankBalance(): Returns the total balance in the bank.
+
+Main Class: BankMain
+  ● Create a separate BankMain class with the main method.
+  ● In the main method, perform the following tasks:
+1. Create three BankAccount objects with different account numbers and initial balances.
+2. Perform deposit and withdrawal operations for different accounts.
+3. Try withdrawing an amount that violates the minimum balance rule.
+4. Print the account details (Account Holder, Account Number, Balance).
+5. Call the static methods to display the total number of accounts and total bank balance.
+
+Sample output:
+Initial deposit must be at least 500. Setting balance to 500.
+Deposited: 500.0. New balance: 1500.0
+Withdrawn: 300.0. New balance: 400.0
+Insufficient balance! Minimum balance of 500 must be maintained.
+Account 1: Alice (Account No: 1001), Balance: 1500.0
+Account 2: Bob (Account No: 1002), Balance: 400.0
+Account 3: Charlie (Account No: 1003), Balance: 500.0
+Total accounts: 3
+Total bank balance: 2400.0
