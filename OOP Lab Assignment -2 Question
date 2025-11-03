@@ -1,0 +1,67 @@
+// Employee Management System 
+/* Objective:
+In this assignment, you will implement an Employee Management System in Java using class, object,
+static variable/method, inheritance, final keyword, polymorphism, dynamic method dispatch, and
+arrays of objects. The program will demonstrate employee salary computation for different roles
+while enforcing rules through conditional setters and using an array to manage multiple employees.
+Requirements:
+1. Create a base class Employee with the following private attributes:
+○ empId (integer) – Unique employee ID.
+○ name (String) – Employee name.
+○ basicSalary (double) – Basic salary.
+2. Define additional elements in the Employee class:
+○ A final variable COMPANY_NAME set to "TechNova Pvt. Ltd.".
+○ A static variable totalEmployees to track the total number of employees created.
+○ A constructor that initializes empId, name, and basicSalary.
+■ If the basicSalary is less than 10000, print a message and set it to 10000.
+■ Increment totalEmployees each time an employee is created.
+○ Setter and Getter methods:
+■ setName(String name) – Valid only if the name is not empty or null.
+■ setBasicSalary(double salary) – If less than 10000, set to 10000 and display a
+message.
+■ Getter methods for all attributes.
+○ A method calculateSalary() that returns the basicSalary.
+3. Create subclasses that inherit from Employee:
+○ Manager class
+■ Additional attribute: performanceBonus.
+■ Overrides calculateSalary() to return basicSalary + performanceBonus.
+○ Developer class
+■ Additional attribute: projectAllowance.
+■ Overrides calculateSalary() to return basicSalary + projectAllowance.
+
+4. Use the final keyword appropriately:
+○ Make the company name constant using final.
+○ Make one method (like displayCompanyName()) final so subclasses cannot override it.
+5. Add static methods in Employee:
+○ getTotalEmployees() – Returns the total number of employees created.
+6. Use an array of objects:
+○ Create an array (e.g., Employee[] employees = new Employee[3];) to store both
+Manager and Developer objects.
+○ Use dynamic method dispatch to call overridden methods (calculateSalary()) via
+Employee references.
+
+Main Class: EmployeeMain
+In the main method:
+1. Create an array of size 3 to store employee objects.
+2. Instantiate at least one Manager and one Developer object using the parameterized
+constructor.
+3. Use setter methods to update employee details (demonstrating conditional setters).
+4. Store all objects in the array.
+5. Use a loop to:
+○ Display employee details (ID, Name, Company, Salary).
+○ Call calculateSalary() polymorphically for each object.
+6. Finally, display the total number of employees using the static method getTotalEmployees().
+[*** Bonus marks for implementing Scanner object to take user input where relevant.***]
+
+Sample output:
+Invalid salary! Setting basic salary to 10000.0
+Employee created at TechNova Pvt. Ltd.
+Manager Salary Calculated: 18000.0
+Developer Salary Calculated: 16000.0
+
+Employee Details:
+ID: 101 | Name: Alice | Company: TechNova Pvt. Ltd. | Salary: 18000.0
+ID: 102 | Name: Bob | Company: TechNova Pvt. Ltd. | Salary: 16000.0
+ID: 103 | Name: Charlie | Company: TechNova Pvt. Ltd. | Salary: 10000.0
+Total Employees: 3
+/*
