@@ -1,0 +1,12 @@
+// Write a Java program to create a simple JFrame window with the title ‘My Name is Sazzad’ and set its size to 400×400 pixels.
+import javax.swing.JFrame;
+
+public class MyFrames {
+
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("My Name is Sazzad");
+        frame.setSize(400,400);
+        frame.setVisible(true);
+
+    }
+}
