@@ -1,0 +1,35 @@
+Design a simple Gaming Character System using abstract class and interface in Java.
+Requirements:
+1. Create an interface named CharacterActions with the following methods:
+○ void attack();
+○ void defend();
+○ void gainExperience(int points);
+2. Create an abstract class named GameCharacter that implements the
+CharacterActions interface and contains:
+○ Protected variables: String name, int level, and int experience.
+○ A constructor to initialize these variables.
+○ A concrete method showStats() to display the character’s current stats.
+○ The methods attack() and defend() should be declared abstract here.
+3. Create a concrete subclass named Warrior that extends GameCharacter and
+provides:
+○ Implementations for attack() and defend().
+○ Each successful attack should call gainExperience() and increase experience
+points.
+○ The level should increase by 1 every time experience reaches or exceeds 100
+points.
+
+4. In the main class GameSystem, do the following:
+○ Create a Warrior object with an initial name, level, and experience.
+○ Perform a series of attacks and defenses.
+○ Display character stats after each action.
+
+Character Created: Aragon
+Level: 1 | Experience: 0
+Aragon attacks fiercely with a sword!
+Experience gained: 40
+Aragon defends with a shield!
+Aragon attacks fiercely with a sword!
+Experience gained: 60
+Level up! Aragon reached Level 2
+Final Stats:
+Name: Aragon | Level: 2 | Experience: 0
