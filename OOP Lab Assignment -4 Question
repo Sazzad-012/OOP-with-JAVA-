@@ -1,0 +1,91 @@
+Assignment Type 1: Student Result Processing System
+You are to create a mini “Student Result Processing System” that performs the following:
+1. Takes input from the user:
+○ Student name
+○ Score in 3 subjects
+2. You must use predefined exceptions to handle:
+○ Invalid number input (NumberFormatException)
+○ Division by zero or invalid array access (ArithmeticException,
+ArrayIndexOutOfBoundsException)
+
+3. You must create a custom exception named InvalidScoreException that is thrown when:
+○ Any subject score is less than 0
+○ Any subject score is greater than 100
+4. Implement a method calculateAverage(int[] marks) that:
+○ Uses throws InvalidScoreException
+○ Performs validation inside the method
+○ Uses throw to trigger the custom exception
+5. In the main() method:
+○ Use try-catch to handle:
+■ Predefined exceptions
+■ Custom exceptions
+○ If everything is valid, print:
+■ Student name
+■ Individual marks
+■ Average score
+
+Assignment type 2 : Bank Withdrawal Validation Using Exceptions
+Write a Java program that simulates a simple bank withdrawal system.
+Requirements:
+1. The program should take two inputs from the user:
+○ Current account balance
+○ Amount to withdraw
+2. You must handle the following predefined exceptions:
+○ NumberFormatException → if user enters non-numeric values
+○ ArithmeticException → if withdrawal amount is zero or negative
+3. Create a custom exception (checked) named InsufficientBalanceException that is thrown
+when:
+○ The withdrawal amount is greater than the account balance
+
+Implement a static and void method withdraw which takes two parameters, balance(double) and
+amount(double) also that throws InsufficientBalanceException.
+4. This method should:
+○ Validate the withdrawal
+○ Throw the custom exception if the balance is insufficient
+○ Print the updated balance if withdrawal is successful
+5. Handle all exceptions in the main() method.
+Sample inputs/outputs (different cases) :
+# Input 
+Enter balance:
+5000
+Enter withdrawal amount:
+1500
+
+# Output
+Withdrawal successful.
+Remaining balance: 3500.0
+
+# Input 
+Enter balance:
+abc
+
+# Output
+Invalid input: Please enter numbers only.
+
+# Input 
+Enter balance:
+3000
+Enter withdrawal amount:
+-200
+
+# Output
+Error: Withdrawal amount must be greater than zero.
+
+# Input 
+Enter balance:
+2000
+Enter withdrawal amount:
+5000
+
+# Output 
+Insufficient balance: Cannot withdraw more than existing balance.
+
+# Input 
+Enter balance:
+1000
+Enter withdrawal amount:
+1000
+
+# Output 
+Withdrawal successful.
+Remaining balance: 0.0
